@@ -1,0 +1,19 @@
+<p>
+    Hai All Welcome To Angular site with Basic Readability of Concepts. </p>
+<div>
+    <button type="button" class="btn btn-primary" (click)="openpop()">Click here to add data</button>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>BioData</th>
+            <th>Job</th>
+            <th>Salary</th>
+        </tr>
+        <tr *ngFor="let x of user">
+            <td> {{ x.name }}</td>
+            <td>{{ x.bio }}</td>
+            <td> {{ x.job }}</td>
+            <td>{{ x.salary }}</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,40 @@
+<h1>SignIn</h1>
+
+<form [formGroup]="form">
+  <div class="form-group">
+    <input type="email" [(ngModel)]="emailpas.name" class="form-control" placeholder="Email consists orginal format"
+      formControlName="email" minlength="3">
+  </div>
+  <br>
+  <div class="form-group">
+    <input type="password" [(ngModel)]="emailpas.pass" class="form-control" placeholder="Password"
+      formControlName="password" required>
+  </div>
+  <br>
+  <br>
+  <div class="container">
+    <button type="submit" class="btn btn-primary"  (click)="Signin()">SignIn</button>
+    <!-- [disabled]="!form.valid" -->
+    <p>if you are not a registered user click
+      <a href="registration">here</a> to register</p>
+  </div>
+</form>
+  <div *ngIf=emailpass.length>
+    <table>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Password</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let emailp of emailpass">
+        <th><input type="checkbox"/></th>
+        <td> {{emailp.name}}</td>
+        <td> {{emailp.pass}}</td>
+        <td>
+          <button  (click)="editrecord(emailp)">Edit</button>
+          <button  (click)="deleterecord(emailp)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>

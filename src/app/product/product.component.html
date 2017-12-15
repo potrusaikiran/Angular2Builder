@@ -1,0 +1,47 @@
+<p>Welcome to Product World</p>
+<form>
+  <table class="table">
+    <tr style="border-top: 0px solid #ddd;">
+      <th>Name</th>
+      <th>Code</th>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" [(ngModel)]="product.Name" class="form-control" name="name" placeholder="Pleae Enter Name of Product"
+        />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="product.Code" class="form-control" name="code" placeholder="Pleae Enter Product Code">
+      </td>
+    </tr>
+  </table>
+  <b>PRICE DETAILS</b>
+  <button type="button" class="btn btn primary" (click)="Addpop()">Add</button>
+  <table class="table">
+    <tr>
+
+      <th>Year</th>
+      <th>Price</th>
+      <th>GMPMT</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let PriceDetail of product.PriceDetailModel">
+      <td>
+        <input type="text" [(ngModel)]="PriceDetail.Year" class="form-control" name="year" placeholder="Enter Year">
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="PriceDetail.Price" class="form-control" name="price" placeholder="Enter Price">
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="PriceDetail.GMPMT" class="form-control" name="gmpmt" placeholder="Enter GMPMT">
+      </td>
+      <button type="button" class="btn btn-primary" (click)="Deletepop(PriceDetail.Id)">Delete</button>
+    </tr>
+  </table>
+  <div class="container">
+    <div class="btn-group">
+      <button type="submit" class="btn btn-primary" (click)="SaveProduct()">Save</button>
+      <button type="submit" class="btn btn-primary" (click)="CancelProduct()">Cancel</button>
+    </div>
+  </div>
+</form>

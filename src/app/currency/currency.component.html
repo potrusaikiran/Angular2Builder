@@ -1,0 +1,41 @@
+<h1>
+    Currency Exchange Rates</h1>
+<div class="container">
+    <div class="form-group">
+        <input type="text" [(ngModel)]="id_currency" (change)="callCurrencyService()" class="form-control" placeholder="Enter Currency Symbol. Example: GBP(,AUD,INR)...">
+        <br>
+        <br>
+        <div *ngIf="my_result">
+            <h3>Exchange Rate Details</h3>
+            <br>
+            <table align="center">
+                <tr>
+                    <td>Exchange Currency:
+                        <b> {{ this.my_result.base }}</b>
+                    </td>
+                    <td> Exchange Date:
+                        <b> {{ this.my_result.date }}</b>
+                    </td>
+                </tr>
+            </table>
+           <b> Exchange Rates with currency names are shown below</b>
+            <br> BGN:{{ this.my_result.rates.BGN }}
+            <br> AUD:
+            <b>{{ this.my_result.rates.AUD }}</b>
+            <br> CNY:
+            <b>{{ this.my_result.rates.CNY }}</b>
+            <br> GBP:
+            <b>{{ this.my_result.rates.GBP }}</b>
+            <br> INR:
+            <b>{{ this.my_result.rates.INR }}</b>
+            <br> SGD:
+            <b>{{ this.my_result.rates.SGD }}</b>
+            <br> USD:
+            <b>{{ this.my_result.rates.USD }}</b>
+            <br>
+        </div>        
+        <p class="text-info">Total # of all the service requests including Weather, Movie, and Currency is :
+            <span class="badge">{{this._sharedService.totReqsMade}}</span>
+        </p>
+    </div>
+</div>
