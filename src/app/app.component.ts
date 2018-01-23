@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styles: ['h1{color:red} footer{color:violet}']
 })
 export class AppComponent {
-  title = 'Angular2 App to get the some of info..';
+  title = 'Angular5 App to get the some of info..';
 }

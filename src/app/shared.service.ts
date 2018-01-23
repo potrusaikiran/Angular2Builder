@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import 'rxjs/Rx';
-// tslint:disable-next-line:import-blacklist
+
 import { Observable } from 'rxjs';
 @Injectable()
 export class SharedService {
@@ -17,7 +17,6 @@ export class SharedService {
     constructor(private _http: Http) { }
 
     findWeather(city, state) {
-        this.totReqsMade = this.totReqsMade + 1;
         return this._http.get(this.weatherURL1 + city + this.weatherURL2 + state + this.weatherURL3)
             .map(response => {
                 { return response.json() };
@@ -26,7 +25,6 @@ export class SharedService {
     }
 
     findMovie(movie) {
-        this.totReqsMade = this.totReqsMade + 1;
         return this._http.get(this.findMovieURL1 + movie + this.findMovieURL2)
             .map(response => {
                 { return response.json(); }
@@ -34,21 +32,12 @@ export class SharedService {
             .catch(error => Observable.throw(error.json().error));
     }
 
-    getCurrencyExchRate(currency) {
-        this.totReqsMade = this.totReqsMade + 1;
+    getCurrencyExchRate(currency) 
+    {
         return this._http.get(this.currencyURL + currency)
             .map(response => {
                 { return response.json(); }
             })
             .catch(error => Observable.throw(error.json()));
-    }
-    // tslint:disable-next-line:member-ordering
-    private doctors = [];
-    AllEmployeeGreater() {
-        this._http.get(this.ListOfEmployee)
-            .flatMap((response) => response.json())
-            .subscribe((data) => {
-                this.doctors.push(data);
-            });
     }
 }

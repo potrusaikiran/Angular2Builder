@@ -16,9 +16,6 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit() {
   }
-  AllEmployeeGreater() {
-    this._sharedService.AllEmployeeGreater();
-  }
   openpop() {
     alert('UnderConstruction  ');
   }
