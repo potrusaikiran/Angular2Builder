@@ -17,7 +17,7 @@ export class RegistrationComponent implements OnInit {
   }
   SaveSignUp() {
     this.signup.Id = Guid.Empty();
-    return this.http.post('http://192.168.0.145/tradeappdev/api/tradeapp/saveuser', this.signup)
+    return this.http.post('http://202.153.45.142/tradeappdev/api/tradeapp/saveuser', this.signup)
       .map((res: Response) => res.json())
       .subscribe((res: SignUp) => { this.postResponse = res; console.log(res); })
   }
