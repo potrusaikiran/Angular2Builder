@@ -27,7 +27,8 @@ export class CurrencyComponent implements OnInit {
             },
             error => {
                 console.log('Error. The callCurrencyService result JSON value is as follows:');
-                console.log(error);
+                console.log(error.error);
+                alert(error.error+" currency");
             }
             );
     }

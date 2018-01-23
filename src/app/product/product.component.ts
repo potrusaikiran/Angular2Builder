@@ -4,6 +4,7 @@ import { Guid } from '../guid';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
+    styles: [`h1 { font-weight:normal;color:orange}`]
 })
 export class ProductComponent implements OnInit {
   product: any = { Id: null, Code: null, Name: null, PriceDetailModel: [] }

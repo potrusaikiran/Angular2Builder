@@ -1,17 +1,31 @@
-<h1>Open Movie Database</h1>
+<h1> Movie Name serch</h1>
 <div class="container">
- <div class="form-group">
-  <input type="text" required [(ngModel)]="id_movie" (change)="callMovieService()" class="form-control" placeholder="Enter Movie name ...">
-  <br><br>
-  <h3>Movie Details</h3>
-  <br>
-  <p class="well lead">
-      <i> Title :</i> {{ this.mv_Title }} <br>
-      <i> Plot :</i> {{ this.mv_Plot }} <br>
-      <i> Actors :</i> {{ this.mv_Actors }} <br>
-      <i> Directed by :</i> {{ this.mv_Director }} <br>
-      <i> Rated :</i> {{ this.mv_Rated }} <br>
-      <i> Release Date :</i> {{ this.mv_Released }} <br>
-  </p>
- </div>
+
+    <div class="form-group">
+    
+        <input type="text" required [(ngModel)]="id_movie" (change)="callMovieService()" class="form-control" placeholder="Enter Movie name ...">
+        <br>
+        <br>
+        <div *ngIf="this.mv_Title">
+        
+            <h3>Movie Details</h3>
+        
+            <br>
+            <p class="well lead">
+            
+                <i> Title :</i> {{ this.mv_Title }}
+                <br>
+                <i> Plot :</i> {{ this.mv_Plot }}
+                <br>
+                <i> Actors :</i> {{ this.mv_Actors }}
+                <br>
+                <i> Directed by :</i> {{ this.mv_Director }}
+                <br>
+                <i> Rated :</i> {{ this.mv_Rated }}
+                <br>
+                <i> Release Date :</i> {{ this.mv_Released }}
+                <br>
+            </p>
+        </div>
+        </div>
 </div>
