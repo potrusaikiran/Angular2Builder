@@ -15,19 +15,27 @@ import { SharedService } from './shared.service';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
+import { routes } from './app.routes';
+import { PeParentComponent } from './pe-parent/pe-parent.component';
+import { PeChildComponent } from './pe-child/pe-child.component';
 
+// const routes: Routes = [
+//   { path: 'menu', redirectTo: '', pathMatch: 'full' },
+//   { path: 'weather', component: WeatherComponent },
+//   { path: 'movie', component: MovieComponent },
+//   { path: 'currency', component: CurrencyComponent },
+//   { path: 'registration', component: RegistrationComponent },
+//   { path: 'login', component: LoginComponent },
+//   { path: '', component: HomeComponent },
+//   { path: 'product', component: ProductComponent },
+//   {
+//     path: 'bindings', component: BindingsComponent
+//   },
+//   {
+//     path: 'parent', component: ParentComponent
+//   }
 
-const routes: Routes = [
-  { path: 'menu', redirectTo: '', pathMatch: 'full' },
-  { path: 'weather', component: WeatherComponent },
-  { path: 'movie', component: MovieComponent },
-  { path: 'currency', component: CurrencyComponent },
-  { path: 'registration', component: RegistrationComponent },
-  { path: 'login', component: LoginComponent },
-  { path: '', component: HomeComponent },
-  { path: 'product', component: ProductComponent }
-
-];
+// ];
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +47,8 @@ const routes: Routes = [
     LoginComponent,
     HomeComponent,
     ProductComponent,
+    PeParentComponent,
+    PeChildComponent
   ],
   imports: [
     BrowserModule,
