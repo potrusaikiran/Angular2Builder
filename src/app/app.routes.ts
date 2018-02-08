@@ -19,6 +19,6 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: '', component: HomeComponent },
     { path: 'product', component: ProductComponent },
-    {path:'parent',component:PeParentComponent},
-    {path:'child',component:PeChildComponent}
+    {path:'parent',component: PeParentComponent},
+    {path:'child',component: PeChildComponent}
   ]; 

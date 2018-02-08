@@ -19,23 +19,6 @@ import { routes } from './app.routes';
 import { PeParentComponent } from './pe-parent/pe-parent.component';
 import { PeChildComponent } from './pe-child/pe-child.component';
 
-// const routes: Routes = [
-//   { path: 'menu', redirectTo: '', pathMatch: 'full' },
-//   { path: 'weather', component: WeatherComponent },
-//   { path: 'movie', component: MovieComponent },
-//   { path: 'currency', component: CurrencyComponent },
-//   { path: 'registration', component: RegistrationComponent },
-//   { path: 'login', component: LoginComponent },
-//   { path: '', component: HomeComponent },
-//   { path: 'product', component: ProductComponent },
-//   {
-//     path: 'bindings', component: BindingsComponent
-//   },
-//   {
-//     path: 'parent', component: ParentComponent
-//   }
-
-// ];
 @NgModule({
   declarations: [
     AppComponent,
