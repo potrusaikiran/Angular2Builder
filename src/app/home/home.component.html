@@ -1,7 +1,7 @@
 <p *ngIf="isgrid">Hai All Welcome To Angular site with Basic Readability of Concepts. </p>
 <p *ngIf="!isgrid">Now is in edit </p>
 <div *ngIf="!isclick ||isgrid">
-    <button type="button" class="btn btn-primary" (click)="openpop()">Click here to add data</button>
+    <button type="button" class="btn btn-primary" (click)="openpop()">+</button>
     <table>
         <tr>
             <th>Name</th>
@@ -33,6 +33,6 @@
     <div>
         Salary<input type="text" [(ngModel)]="user.salary" required>
     </div>
-    <button type="button" (click)="addtolist(user)">Save</button>
-    <button type="button" (click)="cancel(user)">Cancel</button>
+    <button type="button"class="btn btn-success"  (click)="addtolist(user)">Save</button>
+    <button type="button" class="btn btn-danger"(click)="cancel(user)">Cancel</button>
 </div>
