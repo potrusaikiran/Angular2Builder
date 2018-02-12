@@ -40,6 +40,19 @@ import { PeChildComponent } from './pe-child/pe-child.component';
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
+  exports: [
+    AppComponent,
+    WeatherComponent,
+    MovieComponent,
+    CurrencyComponent,
+    MenuComponent,
+    RegistrationComponent,
+    LoginComponent,
+    HomeComponent,
+    ProductComponent,
+    PeParentComponent,
+    PeChildComponent
+  ],
   providers: [SharedService],
   bootstrap: [AppComponent]
 })
