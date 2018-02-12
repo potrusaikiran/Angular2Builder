@@ -1,6 +1,6 @@
 <p>
     Hai All Welcome To Angular site with Basic Readability of Concepts. </p>
-<div>
+<div *ngIf="!isclick">
     <button type="button" class="btn btn-primary" (click)="openpop()">Click here to add data</button>
     <table>
         <tr>
@@ -9,11 +9,28 @@
             <th>Job</th>
             <th>Salary</th>
         </tr>
-        <tr *ngFor="let x of user">
-            <td> {{ x.name }}</td>
-            <td>{{ x.bio }}</td>
-            <td> {{ x.job }}</td>
-            <td>{{ x.salary }}</td>
+        <tr *ngFor="let user of users">
+            <!-- <td><button type="button"(click)="SelectedUser()">{{ user.name }}</button></td> -->
+            <td>
+                <a (click)="SelectedUser(user)">{{ user.name }}</a>
+            </td>
+            <td>{{ user.bio }}</td>
+            <td> {{ user.job }}</td>
+            <td>{{ user.salary }}</td>
         </tr>
     </table>
+</div>
+<div *ngIf="isclick&&user!=null">
+    <div>
+        <input type="text" [(ngModel)]="user.name" >
+    </div>
+    <div>
+        <input type="text" [(ngModel)]="user.bio" >
+    </div>
+    <div>
+        <input type="text" [(ngModel)]="user.job">
+    </div>
+    <div>
+        <input type="text" [(ngModel)]="user.salary">
+    </div>
 </div>

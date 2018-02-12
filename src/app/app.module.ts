@@ -42,16 +42,7 @@ import { PeChildComponent } from './pe-child/pe-child.component';
   ],
   exports: [
     AppComponent,
-    WeatherComponent,
-    MovieComponent,
-    CurrencyComponent,
-    MenuComponent,
-    RegistrationComponent,
-    LoginComponent,
-    HomeComponent,
-    ProductComponent,
-    PeParentComponent,
-    PeChildComponent
+    WeatherComponent
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
