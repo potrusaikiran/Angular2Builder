@@ -1,6 +1,6 @@
-<p>
-    Hai All Welcome To Angular site with Basic Readability of Concepts. </p>
-<div *ngIf="!isclick">
+<p *ngIf="isgrid">Hai All Welcome To Angular site with Basic Readability of Concepts. </p>
+<p *ngIf="!isgrid">Now is in edit </p>
+<div *ngIf="!isclick ||isgrid">
     <button type="button" class="btn btn-primary" (click)="openpop()">Click here to add data</button>
     <table>
         <tr>
@@ -20,17 +20,19 @@
         </tr>
     </table>
 </div>
-<div *ngIf="isclick&&user!=null">
+<div *ngIf="user!=null">
     <div>
-        <input type="text" [(ngModel)]="user.name" >
+        userName<input type="text" [(ngModel)]="user.name" required>
     </div>
     <div>
-        <input type="text" [(ngModel)]="user.bio" >
+        BioData<input type="text" [(ngModel)]="user.bio" required>
     </div>
     <div>
-        <input type="text" [(ngModel)]="user.job">
+        Designation<input type="text" [(ngModel)]="user.job" required>
     </div>
     <div>
-        <input type="text" [(ngModel)]="user.salary">
+        Salary<input type="text" [(ngModel)]="user.salary" required>
     </div>
+    <button type="button" (click)="addtolist(user)">Save</button>
+    <button type="button" (click)="cancel(user)">Cancel</button>
 </div>

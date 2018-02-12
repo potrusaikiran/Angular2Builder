@@ -14,16 +14,37 @@ export class HomeComponent implements OnInit {
   { 'name': 'Rajesh', 'bio': 'Guntur', 'job': 'developer', 'salary': 10 }];
   user: User;
   debugger;
-  isclick:boolean
+  isclick: boolean=false;
+  isgrid: boolean=true
   constructor(private _sharedService: SharedService) {
   }
   ngOnInit() {
   }
   openpop() {
-    alert('UnderConstruction...!!!');
+    this.isclick = true;
+    this.user = new User(null, null, null, 0);
+    this.isgrid=false;
+    // alert('UnderConstruction...!!!');
   }
   SelectedUser(user: User) {
-    this.isclick=true;
+    this.isclick = true;
+    this.isgrid=false
+    this.user = user;
+  }
+  addtolist(user: User) {
+    if(user.name==null||user.bio==null||user.job==null||user.salary==null)
+    alert("Please fill the fields to continue...!!!");
+    else{
+      this.users.forEach(use => {
+        if(use.name!=user.name)
+        this.users.push(user);
+        this.isgrid=true;
+      });
+    }
+  }
+  cancel(user:User){
+    this.isgrid=true;
+    this.user=null;
   }
 
 }
