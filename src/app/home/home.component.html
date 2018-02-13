@@ -1,7 +1,8 @@
 <p *ngIf="isgrid">Hai All Welcome To Angular site with Basic Readability of Concepts. </p>
-<p *ngIf="!isgrid">Now is in edit </p>
+<p *ngIf="!isgrid">Hi {{ user.name }}</p>
 <div *ngIf="!isclick ||isgrid">
     <button type="button" class="btn btn-primary" (click)="openpop()">+</button>
+    <button type="button" class="btn btn-warning" (click)="delete(user)">X</button>
     <table>
         <tr>
             <th>Name</th>
@@ -10,9 +11,8 @@
             <th>Salary</th>
         </tr>
         <tr *ngFor="let user of users">
-            <!-- <td><button type="button"(click)="SelectedUser()">{{ user.name }}</button></td> -->
             <td>
-                <a (click)="SelectedUser(user)">{{ user.name }}</a>
+                    <input type="checkbox"> <a (click)="SelectedUser(user)">{{ user.name }}</a>
             </td>
             <td>{{ user.bio }}</td>
             <td> {{ user.job }}</td>
@@ -21,18 +21,29 @@
     </table>
 </div>
 <div *ngIf="user!=null">
-    <div>
-        userName<input type="text" [(ngModel)]="user.name" required>
-    </div>
-    <div>
-        BioData<input type="text" [(ngModel)]="user.bio" required>
-    </div>
-    <div>
-        Designation<input type="text" [(ngModel)]="user.job" required>
-    </div>
-    <div>
-        Salary<input type="text" [(ngModel)]="user.salary" required>
-    </div>
-    <button type="button"class="btn btn-success"  (click)="addtolist(user)">Save</button>
-    <button type="button" class="btn btn-danger"(click)="cancel(user)">Cancel</button>
+    <table>
+        <tr>
+            <td>
+                <strong>UserName</strong>
+                <input type="text" [(ngModel)]="user.name" class="form-control" placeholder="Pleae Enter UserName" />
+            </td>
+            <td>
+                <strong>BioData</strong>
+                <input type="text" [(ngModel)]="user.bio" class="form-control" placeholder="Pleae Enter Bio" />
+                <!-- <textarea rows="2" cols="40">{{user.bio}}</textarea> -->
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Designation</strong>
+                <input type="text" [(ngModel)]="user.job" class="form-control" placeholder="Pleae Enter Job Description" />
+            </td>
+            <td>
+                <strong>Salary</strong>
+                <input type="number" [(ngModel)]="user.salary" class="form-control" placeholder="Pleae Enter Salary">
+            </td>
+        </tr>
+    </table>
+    <button type="button" class="btn btn-success" (click)="addtolist(user)">Save</button>
+    <button type="button" class="btn btn-danger" (click)="cancel(user)">Cancel</button>
 </div>
