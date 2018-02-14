@@ -12,7 +12,7 @@
         </tr>
         <tr *ngFor="let user of users">
             <td>
-                    <input type="checkbox"> <a (click)="SelectedUser(user)">{{ user.name }}</a>
+                    <input type="checkbox" (click)="delete(user)"> <a (click)="SelectedUser(user)">{{ user.name }}</a>
             </td>
             <td>{{ user.bio }}</td>
             <td> {{ user.job }}</td>

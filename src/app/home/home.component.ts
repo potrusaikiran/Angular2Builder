@@ -31,15 +31,22 @@ export class HomeComponent implements OnInit {
     this.isclick = true;
     this.isgrid = false
     this.user = user;
+    this.user= Object.assign({}, user);
   }
   addtolist(user: User) {
     if (user.name == null || user.bio == null || user.job == null || user.salary == null)
       alert("Please fill the fields to continue...!!!");
     else {
-      user.Id=Guid.newGuid();
-      this.users.push(user);
+      var index = this.users.findIndex(c => c.Id == user.Id);
+      if (index < 0) {
+        user.Id = Guid.newGuid();
+        this.users.push(user);
+        this.isgrid = true;
+        this.user = null;
+      }
+      this.users[index] = user;
       this.isgrid = true;
-      user = null;
+      this.user = null;
     }
   }
   cancel(user: User) {
