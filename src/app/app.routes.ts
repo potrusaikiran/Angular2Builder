@@ -8,7 +8,7 @@ import { HomeComponent } from "./home/home.component";
 import { ProductComponent } from "./product/product.component";
 import { PeParentComponent } from "./pe-parent/pe-parent.component";
 import { PeChildComponent } from "./pe-child/pe-child.component";
-
+import { LeadsheetComponent } from "./leadsheet/leadsheet.component";
 
 export const routes: Routes = [
     { path: 'menu', redirectTo: '', pathMatch: 'full' },
@@ -20,5 +20,6 @@ export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'product', component: ProductComponent },
     {path:'parent',component: PeParentComponent},
-    {path:'child',component: PeChildComponent}
+    {path:'child',component: PeChildComponent},
+    {path:'leadsheet',component:LeadsheetComponent}
   ]; 

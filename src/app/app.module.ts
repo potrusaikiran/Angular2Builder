@@ -18,7 +18,8 @@ import { ProductComponent } from './product/product.component';
 import { routes } from './app.routes';
 import { PeParentComponent } from './pe-parent/pe-parent.component';
 import { PeChildComponent } from './pe-child/pe-child.component';
-
+import { LeadsheetComponent } from './leadsheet/leadsheet.component';
+import { LeadsheetService } from "./leadsheet.service";
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { PeChildComponent } from './pe-child/pe-child.component';
     HomeComponent,
     ProductComponent,
     PeParentComponent,
-    PeChildComponent
+    PeChildComponent,
+    LeadsheetComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,7 @@ import { PeChildComponent } from './pe-child/pe-child.component';
     AppComponent,
     WeatherComponent
   ],
-  providers: [SharedService],
+  providers: [SharedService ,LeadsheetService],
   bootstrap: [AppComponent]
 })
 
