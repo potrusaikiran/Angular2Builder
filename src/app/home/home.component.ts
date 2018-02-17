@@ -10,11 +10,11 @@ import { Guid } from '../guid';
 })
 
 export class HomeComponent implements OnInit {
-  users: User[] = [{ Id: Guid.newGuid(), 'name': 'Saikrian', 'bio': 'Khammam', 'job': 'Developer', 'salary': 10 },
-  { Id: Guid.newGuid(), 'name': 'Narendra', 'bio': 'Nellore', 'job': 'Tester', 'salary': 20 },
-  { Id: Guid.newGuid(), 'name': 'Rajesh', 'bio': 'Guntur', 'job': 'developer', 'salary': 10 }];
+  users: User[] = [{ 'Id': Guid.newGuid(), 'name': 'Saikrian', 'bio': 'Khammam', 'job': 'Developer', 'salary': 10 },
+  { 'Id': Guid.newGuid(), 'name': 'Narendra', 'bio': 'Nellore', 'job': 'Tester', 'salary': 20 },
+  { 'Id': Guid.newGuid(), 'name': 'Rajesh', 'bio': 'Guntur', 'job': 'developer', 'salary': 10 }];
   user: User;
-  debugger;
+  selectedusers: User[] = [];
   isclick: boolean = false;
   isgrid: boolean = true
   constructor(private _sharedService: SharedService) {
@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
     this.isclick = true;
     this.isgrid = false
     this.user = user;
-    this.user= Object.assign({}, user);
+    this.user = Object.assign({}, user);
   }
   addtolist(user: User) {
     if (user.name == null || user.bio == null || user.job == null || user.salary == null)
@@ -54,17 +54,24 @@ export class HomeComponent implements OnInit {
     this.user = null;
     console.log(this.users)
   }
-  delete(user: any) {
-    if (user == null)
+  delete() {
+    if (this.selectedusers == null)
       alert("please select checkbox")
     else {
-      for (let i = 0; i < this.users.length; i++) {
-        if (this.users[i].Id == user.Id) {
-          this.users.splice(i, 1);
-          this.isgrid = true;
+      for (let i = 0; i < this.selectedusers.length; i++) {
+        for (let j = 0; j < this.users.length; j++) {
+          if (this.selectedusers[i].Id == this.users[j].Id)
+            this.users.splice(j, 1);
         }
       }
     }
+  }
+  selectedforeditordelete(user: User) {
+    var count = this.selectedusers.indexOf(user);
+    if (count > -1)
+      this.selectedusers.splice(count, 1);
+    else
+      this.selectedusers.push(user);
   }
 
 }

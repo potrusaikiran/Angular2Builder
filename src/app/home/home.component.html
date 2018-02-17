@@ -2,7 +2,7 @@
 <p *ngIf="!isgrid">Hi {{ user.name }}</p>
 <div *ngIf="!isclick ||isgrid">
     <button type="button" class="btn btn-primary" (click)="openpop()">+</button>
-    <button type="button" class="btn btn-warning" (click)="delete(user)">X</button>
+    <button type="button" class="btn btn-warning" (click)="delete()">X</button>
     <table>
         <tr>
             <th>Name</th>
@@ -12,7 +12,7 @@
         </tr>
         <tr *ngFor="let user of users">
             <td>
-                    <input type="checkbox" (click)="delete(user)"> <a (click)="SelectedUser(user)">{{ user.name }}</a>
+                    <input type="checkbox" (click)="selectedforeditordelete(user)"> <a (click)="SelectedUser(user)">{{ user.name }}</a>
             </td>
             <td>{{ user.bio }}</td>
             <td> {{ user.job }}</td>
